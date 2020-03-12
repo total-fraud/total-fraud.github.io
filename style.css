@@ -4,7 +4,7 @@
     margin: 0px;
 }
 
-@media (max-width: 970px) {
+@media (max-width: 780px) {
     .side-bar-container {
         display: none;
     }
