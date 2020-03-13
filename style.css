@@ -67,12 +67,10 @@
     line-height: 1.7;
     color: #606060;
     text-decoration: none;
+    padding-right: 10px;
 }
 
-.search-form {
-    padding-left: 30px;
-    padding-right: 55px;
-}
+.search-form {}
 
 .search-form__input {
     border-radius: 5px;
