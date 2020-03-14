@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Oswald:400,500,600|Roboto:500&display=swap&subset=cyrillic');
@@ -13,29 +13,27 @@
 </head>
 
 <body class="body">
-    <div class="header-wrapper">
-        <div class="header-container">
-            <header class="header">
-                <h1 href="" class="logo">PHOTOBOMB</h1>
-                <form class="search-form">
-                    <input type="text" placeholder="Search" class="search-form__input">
-                </form>
-                <nav class="main-nav">
-                    <ul class="main-nav__list">
-                        <li class="mine-nav__item">
-                            <a href=""><img class="main-nav__icon" src="svg/star.svg"></a>
-                        </li>
+    <div class="header-container">
+        <header class="header">
+            <h1 href="" class="logo">PHOTOBOMB</h1>
+            <form class="search-form">
+                <input type="text" placeholder="Search" class="search-form__input">
+            </form>
+            <nav class="main-nav">
+                <ul class="main-nav__list">
+                    <li class="mine-nav__item">
+                        <a href=""><img class="main-nav__icon" src="svg/star.svg"></a>
+                    </li>
 
-                        <li class="mine-nav__item">
-                            <a href=""> <img class="main-nav__icon" src="svg/heart.svg"></a>
-                        </li>
-                        <li class="mine-nav__item">
-                            <a href=""> <img class="main-nav__icon" src="svg/avatar.svg"></a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+                    <li class="mine-nav__item">
+                        <a href=""> <img class="main-nav__icon" src="svg/heart.svg"></a>
+                    </li>
+                    <li class="mine-nav__item">
+                        <a href=""> <img class="main-nav__icon" src="svg/avatar.svg"></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     </div>
 
     <main class="main-content">
@@ -215,8 +213,8 @@
             </div>
 
 
-            <div class="side-bar-container">
-                <div class="side-bar-wrapper">
+            <aside class="side-bar-container">
+                <div class="side-bar">
                     <div class="profile-info">
                         <div class=""><img src="img/profile-pic.jpg" alt="" class="profile-pic"></div>
                         <div class="profile-info__description description">
@@ -250,7 +248,7 @@
                                 </div>
                             </li>
                             <li class="stories-item">
-                                <div><img src="svg/avatar.svg" class="stories-item__icon"></img>
+                                <div><img src="svg/avatar.svg" class="stories-item__icon">
                                 </div>
                                 <div class="stories-item__wrapper ">
                                     <span class="stories-item__name">you</span>
@@ -315,7 +313,6 @@
                                         <span class="recommendation-item__followed">Followed by Grimes</span>
                                     </div>
                                 </li>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -334,7 +331,7 @@
                         </nav>
                     </div>
                 </div>
-            </div>
+            </aside>
         </div>
     </main>
 </body>
