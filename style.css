@@ -4,70 +4,50 @@
     margin: 0px;
 }
 
-@media screen and (max-width: 768px) {
-    .side-bar-container {
-        display: none;
-    }
 
-    .feed {
-
-        margin: 0 auto;
-    }
-
-
-    .search-form {
-        display: none;
-    }
+.body {
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 600px) minmax(auto, 278px) 1fr;
+    grid-template-rows: 54px 1fr;
+    grid-template-areas:
+        "header header header header"
+        ".  feed side-bar  .";
+    grid-column-gap: 30px;
 }
-
-.body {}
 
 .header-container {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
-    z-index: 99999;
-    border-bottom: 1px solid #dbdbdb;
-    background-color: white;
 
-
-
-
-}
-
-.side-bar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 88px;
-    z-index: 9999999;
-    margin-left: 15px;
-    margin-top: 30px;
-}
-
-.side-bar-container {}
-
-
-.header-container {}
-
-.header {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     min-height: 54px;
-    width: 100%;
     align-items: center;
-    max-width: 850px;
+    max-width: 1200px;
+    padding: 0 50px;
     margin: 0 auto;
+}
 
 
 
+.header {
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 99999;
+
+    border-bottom: 1px solid #dbdbdb;
+    background-color: white;
+    width: 100%;
+    grid-area: header;
 }
 
 .logo {
     font-family: 'Bungee shade', cursive;
     font-size: 2rem;
     line-height: normal;
-    width: 360px;
+
     height: 54px;
     line-height: 1.7;
     color: #606060;
@@ -86,7 +66,6 @@
 }
 
 .main-nav {
-    width: 360px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -98,10 +77,15 @@
     display: flex;
     flex-wrap: nowrap;
     list-style: none;
-    width: 140px;
 }
 
-.mine-nav__item {}
+.mine-nav__item {
+    padding-right: 20px;
+}
+
+.mine-nav__item:last-child {
+    padding-right: 0;
+}
 
 .main-nav__icon {
     stroke-width: 15%;
@@ -110,26 +94,14 @@
 
 }
 
-.main-nav__link {}
 
-.main-content {
-    background-color: #f2f2f2;
-
-
-}
-
-.main-content__wrapper {
-    max-width: 850px;
-    margin: 0 auto;
-    background-color: #f2f2f2;
-    height: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-}
 
 .feed {
+
     padding-bottom: 60px;
+    max-width: 600px;
+    grid-area: feed;
+    justify-self: end;
 }
 
 .post {
@@ -265,26 +237,25 @@
     border-top: 1px solid #dbdbdb;
 }
 
-.main-content a {}
-
-.main-content svg {}
-
-
-
 .side-bar {
-    margin-top: 30px;
-    margin-left: 25px;
-    width: 293px;
-}
+    /*
 
+    position: sticky;
+    top: 88px;
+    z-index: 9999999;
+*/
+
+    margin-left: 15px;
+    margin-top: 30px;
+    grid-area: side-bar;
+    justify-self: start;
+}
 
 .profile-info {
     height: 50px;
     display: flex;
     margin-bottom: 20px;
 }
-
-.profile-info__icon {}
 
 .profile-pic {
     height: 50px;
@@ -349,8 +320,6 @@
     font-weight: 500;
     line-height: 0.8;
 }
-
-.main-stories__list {}
 
 .stories-list {
     margin-left: 15px;
@@ -427,10 +396,6 @@
     margin-bottom: 3px;
 }
 
-.stories-item__icon {}
-
-
-
 
 .recommendation-item__wrapper {
     cursor: pointer;
@@ -463,9 +428,8 @@
 
 .tags {
     height: 40px;
+    width: 250px;
 }
-
-.tags-nav {}
 
 .tags-nav__list {
     margin-top: 5px;
@@ -488,4 +452,57 @@
     font-weight: 400;
     line-height: 0.8;
 
+}
+
+
+
+/*MEDIA*/
+
+
+
+
+@media (max-width: 870px) {
+    .body {
+        background-color: #f2f2f2;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-template-rows: 54px 1fr;
+        grid-column-gap: 0;
+        grid-template-areas:
+            "header header header"
+            ".  feed   ."
+    }
+
+    .side-bar {
+        display: none;
+    }
+
+    .search-form {
+        display: none;
+    }
+
+    .header-container {
+        padding: 0 10px;
+        max-width: 600px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-nav {
+        display: none;
+    }
+
+    .header-container {
+
+        justify-content: center;
+    }
+
+    .post {
+        margin-top: 10px;
+    }
+
+    .feed {
+        padding-bottom: 10px;
+    }
 }
