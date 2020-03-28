@@ -1,12 +1,23 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <TodoList />
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import TodoList from "@/components/TodoList.vue";
+
+export default {
+  name: "app",
+  components: {
+    TodoList
+  }
+};
+</script>
 
 <style>
 #app {
