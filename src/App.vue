@@ -1,41 +1,13 @@
 <template>
   <div id="app">
-    <TodoList />
     <router-view />
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import TodoList from "@/components/TodoList.vue";
-
-export default {
-  name: "app",
-  components: {
-    TodoList
-  }
-};
-</script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
 }
 </style>
