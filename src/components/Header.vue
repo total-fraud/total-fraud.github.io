@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <header class="header-container">
-      <h1 href class="logo">PHOTOBOMB</h1>
+      <router-link to="/" class="logo">PHOTOBOMB</router-link>
       <form class="search-form">
         <input type="text" placeholder="Search" class="search-form__input" />
       </form>
@@ -59,7 +59,7 @@
             </a>
           </li>
           <li class="mine-nav__item">
-            <a href>
+            <router-link to="/profile" href>
               <svg
                 version="1.1"
                 class="main-nav__icon"
@@ -84,7 +84,7 @@
                   </g>
                 </g>
               </svg>
-            </a>
+            </router-link>
           </li>
         </ul>
       </nav>
@@ -99,7 +99,7 @@
   justify-content: space-between;
   min-height: 54px;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1000px;
   padding: 0 50px;
   margin: 0 auto;
 }
@@ -120,12 +120,26 @@
   font-family: "Bungee shade", cursive;
   font-size: 2rem;
   line-height: normal;
-
   height: 54px;
   line-height: 1.7;
-  color: #606060;
   text-decoration: none;
   padding-right: 10px;
+  color: #606060;
+}
+
+:hover.logo {
+  animation: pulse 0.5s infinite alternate linear;
+}
+
+@keyframes pulse {
+  0% {
+    color: #606060;
+    fill: #606060;
+  }
+  100% {
+    color: #ec14acfb;
+    fill: #ec14acfb;
+  }
 }
 
 .search-form__input {
@@ -136,31 +150,68 @@
   width: 160px;
 }
 
-.main-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
 .main-nav__list {
   justify-content: space-between;
   flex-direction: row;
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
+  width: 140px;
 }
 
 .mine-nav__item {
-  padding-right: 20px;
-}
-
-.mine-nav__item:last-child {
-  padding-right: 0;
+  height: 25px;
+  width: 25px;
 }
 
 .main-nav__icon {
-  stroke-width: 15%;
-  height: 22px;
-  width: 22px;
+  height: 23px;
+  width: 23px;
+  stroke-width: 0%;
+}
+
+@keyframes pump {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.85);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+:hover.main-nav__icon {
+  animation-name: pump;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@media (max-width: 870px) {
+  .side-bar,
+  .search-form {
+    display: none;
+  }
+
+  .header-container {
+    padding: 0 10px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-container {
+    justify-content: center;
+  }
+
+  .post {
+    margin-top: 10px;
+  }
+
+  .feed {
+    padding-bottom: 10px;
+  }
 }
 </style>

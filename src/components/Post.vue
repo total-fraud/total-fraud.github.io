@@ -27,7 +27,7 @@
           </g>
         </svg>
       </a>
-      <div class="op__name profile-name">PusPus The Cat</div>
+      <div class="op__name profile-name">{{ post.name }}</div>
       <button type="button" class="post__func-btn">
         <svg
           version="1.1"
@@ -52,11 +52,7 @@
       </button>
     </header>
     <div class="pic">
-      <img
-        class="post__pic"
-        src="https://uploads.codesandbox.io/uploads/user/75ba45e0-e867-40f0-9a88-d1e779d6e534/G7et-cat_jazz.jpg"
-        alt="post"
-      />
+      <img class="post__pic" v-bind:src="post.content" alt="post" />
     </div>
     <div class="post__interact">
       <div class="post__btns">
@@ -134,21 +130,15 @@
       </div>
 
       <section class="comment-section">
-        <span class="like-number">45,000 likes</span>
+        <span class="like-number">{{ post.likes }} likes</span>
         <ul class="comments-list">
-          <li class="comments-item">
-            <a href class="comment-name">Sebek</a>
-            <span class="comment-text">wow such a cool cat</span>
-          </li>
-          <li class="comments-item">
-            <a href class="comment-name">NeSebek</a>
-            <span class="comment-text"
-              >bruh look at that cat face😂😂😂😂😂😂</span
-            >
-          </li>
-          <li class="comments-item">
-            <a href class="comment-name">TochnoNeSebek</a>
-            <span class="comment-text">bliny top👌</span>
+          <li
+            class="comments-item"
+            v-for="comment in post.comments"
+            v-bind:key="comment.id"
+          >
+            <a href class="comment-name">{{ comment.name }}</a>
+            <span class="comment-text">{{ comment.text }}</span>
           </li>
         </ul>
         <section class="comment-section__post">
@@ -164,6 +154,12 @@
     </div>
   </article>
 </template>
+
+<script>
+export default {
+  props: ["post"]
+};
+</script>
 
 <style scoped>
 .post {

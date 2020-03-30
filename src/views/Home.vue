@@ -1,5 +1,5 @@
 <template>
-  <div class="HomePage">
+  <div class="HomePage-container">
     <Header />
     <Feed />
     <Aside />
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style>
-.HomePage {
+.HomePage-container {
   background-color: #f2f2f2;
   display: grid;
   grid-template-columns: 1fr minmax(auto, 600px) minmax(auto, 278px) 1fr;
@@ -35,8 +35,7 @@ export default {
 /*MEDIA*/
 
 @media (max-width: 870px) {
-  .HomePage {
-    background-color: #f2f2f2;
+  .HomePage-container {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 54px 1fr;
@@ -45,37 +44,18 @@ export default {
       "header header header"
       ".  feed   .";
   }
-
-  .main-nav {
-    display: none;
-  }
-
-  .side-bar {
-    display: none;
-  }
-
-  .search-form {
-    display: none;
-  }
-
-  .header-container {
-    padding: 0 10px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
 }
 
 @media (max-width: 400px) {
-  .header-container {
-    justify-content: center;
-  }
-
   .post {
     margin-top: 10px;
   }
 
   .feed {
     padding-bottom: 10px;
+  }
+  .main-nav {
+    display: none;
   }
 }
 </style>

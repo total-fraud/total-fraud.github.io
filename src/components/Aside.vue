@@ -3,11 +3,7 @@
     <div class="side-bar__container">
       <div class="profile-info">
         <div class>
-          <img
-            src="https://uploads.codesandbox.io/uploads/user/75ba45e0-e867-40f0-9a88-d1e779d6e534/UxZk-profile-pic.jpg"
-            alt
-            class="profile-pic"
-          />
+          <img src="@/assets/profile-pic.jpg" alt class="profile-pic" />
         </div>
         <div class="profile-info__description description">
           <span href class="profile-info__nickname">nickname</span>
@@ -393,7 +389,6 @@
 
 <style scoped>
 .side-bar {
-  margin-left: 15px;
   margin-top: 30px;
   grid-area: side-bar;
   justify-self: start;
