@@ -1,13 +1,32 @@
 <template>
-  <div class="lds-ellipsis">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <transition>
+    <div class="full-screen">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </transition>
 </template>
 
+<script>
+export default {};
+</script>
+
 <style scoped>
+.full-screen {
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #fafafa;
+	z-index: 9999;
+}
 .lds-ellipsis {
   display: inline-block;
   position: relative;

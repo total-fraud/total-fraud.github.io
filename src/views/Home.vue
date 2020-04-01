@@ -8,8 +8,8 @@
 
 <script>
 import Header from "@/components/Header";
-import Feed from "@/components/Feed";
-import Aside from "@/components/Aside";
+import Feed from "@/components/Home/Feed";
+import Aside from "@/components/Home/Aside";
 
 export default {
   components: {
@@ -22,13 +22,13 @@ export default {
 
 <style>
 .HomePage-container {
-  background-color: #f2f2f2;
+  background-color: #fafafa;
   display: grid;
   grid-template-columns: 1fr minmax(auto, 600px) minmax(auto, 278px) 1fr;
   grid-template-rows: 54px 1fr;
   grid-template-areas:
     "header header header header"
-    ".  feed side-bar  .";
+    ".      feed   side-bar    .";
   grid-column-gap: 30px;
 }
 

@@ -64,6 +64,27 @@
           alt="Image 6"
         />
       </figure>
+      <figure class="gallery-item">
+        <img
+          src="https://picsum.photos/500/500"
+          class="gallery-img"
+          alt="Image 4"
+        />
+      </figure>
+      <figure class="gallery-item">
+        <img
+          src="https://picsum.photos/500/500"
+          class="gallery-img"
+          alt="Image 5"
+        />
+      </figure>
+      <figure class="gallery-item">
+        <img
+          src="https://picsum.photos/500/500"
+          class="gallery-img"
+          alt="Image 6"
+        />
+      </figure>
     </section>
   </div>
 </template>
@@ -80,20 +101,21 @@ export default {
 
 <style scoped>
 .Profile-container {
-  background-color: #f2f2f2;
+  background-color: #fafafa;
   display: grid;
   grid-template-columns: 1fr minmax(auto, 900px) 1fr;
   grid-template-rows: 54px auto 1fr;
-  grid-column-gap: 0;
   grid-template-areas:
     "header header header"
     ".      profile     ."
     ".      gallery     .";
+  grid-column-gap: 30px;
 }
 .profile {
   padding: 30px 0;
   grid-area: profile;
   display: flex;
+  background-color: #fafafa;
 }
 
 .profile__avatar {
@@ -102,6 +124,12 @@ export default {
   border-radius: 50%;
   text-align: center;
   padding-right: 50px;
+}
+
+@media (max-width: 870px) {
+  .profile__avatar {
+    padding-right: 0;
+  }
 }
 .avatar {
   height: 150px;
@@ -179,11 +207,13 @@ export default {
   font-weight: 500;
 }
 .gallery {
+  background-color: #fafafafa;
   grid-area: gallery;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
   align-items: stretch;
+  padding-bottom: 50px;
 }
 
 .gallery-img {

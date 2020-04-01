@@ -166,6 +166,7 @@ export default {
   background-color: white;
   border-radius: 10px;
   margin-top: 30px;
+  border: 1px solid #dbdbdb;
 }
 
 .post__header {

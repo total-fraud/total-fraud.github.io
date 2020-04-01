@@ -91,7 +91,7 @@ export default {
 
 <style scoped>
 .feed {
-  background-color: #f2f2f2;
+  background-color: #fafafa;
   padding-bottom: 60px;
   max-width: 600px;
   grid-area: feed;
